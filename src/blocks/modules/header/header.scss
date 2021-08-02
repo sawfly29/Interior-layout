@@ -1,0 +1,106 @@
+@import "src/blocks/variables";
+@import "src/blocks/mixins";
+.header {
+    @include commonWindowWidth();
+    @include flexColumn();
+    background-image: url("../../../img/header/lamp.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: right;
+    justify-content: flex-start;
+    height: 750px;
+    padding: 0 100px 50px 50px;
+    &__headline {
+        @include flexRow();
+        justify-content: space-between;
+        .headline__logo {
+            @include flexRow();
+            .logo__letter {
+                padding: 66px 28px 20px;
+                font-family: "Playfair Display", serif;
+                font-style: normal;
+                font-weight: 900;
+                font-size: 48px;
+                line-height: 64px;
+                background: $silkWhite;
+            }
+            .logo__sign {
+                font-style: normal;
+                font-weight: 700;
+                font-size: 16px;
+                line-height: 20px;
+                color: $silkWhite;
+                width: 77px;
+                margin: 80px 10px 0;
+            }
+        }
+        .headline__links-container {
+            @include flexRow;
+            margin-top: 65px;
+            .links-container__link-bounder + .links-container__link-bounder {
+                margin-left: 50px;
+            }
+            .links-container__link {
+                @include linkStyle();
+            }
+        }
+    }
+    &__midline {
+        @include flexRow();
+        align-items: flex-end;
+        justify-content: space-between;
+        height: 100%;
+        .midline__links-container {
+            @include flexRow;
+            position: absolute;
+            transform: rotate(270deg) translate(50%, -700%);
+            .links-container__link-bounder + .links-container__link-bounder {
+                margin-left: 50px;
+            }
+            .links-container__link {
+                @include linkStyle();
+            }
+        }
+        .midline__caption {
+            @include flexColumn();
+            align-self: flex-start;
+            margin-left: 170px;
+            .caption__title-container {
+                .caption__title {
+                    @include specialContainerWidth(446px);
+                    font-family: "Playfair Display", serif;
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 48px;
+                    line-height: 64px;
+                    color: $silkWhite;
+                }
+            }
+            .caption__text-container {
+                @include specialContainerWidth(344px);
+                margin-top: 50px;
+                .caption__text {
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 24px;
+                    line-height: 29px;
+                    color: $silkWhite;
+                }
+            }
+            .caption__button-container {
+                margin-top: 56px;
+                .caption__button {
+                    @include buttonStyle(15px, 60px);
+                    font-size: 14px;
+                    line-height: 17px;
+                }
+            }
+        }
+        .midline__example-photos {
+            @include flexRow();
+            .midline__photo-container + .midline__photo-container {
+                margin-left: 20px;
+            }
+        }
+    }
+}

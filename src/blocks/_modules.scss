@@ -1,2 +1,32 @@
+/*font-family: 'Montserrat', sans-serif;
+font-family: 'Playfair Display', serif;*/
+@import "resetStyles";
+
+* {
+    box-sizing: border-box;
+}
+
+img {
+    vertical-align: bottom;
+}
+
+html, body {
+    display: flex;
+    flex: 100% 1;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    font-family: "Montserrat", sans-serif;
+}
+
+body {
+    width: 100%;
+    max-width: 1200px;
+}
+
+@import "variables";
+@import "mixins";
 @import "modules/header/header";
 @import "modules/footer/footer";

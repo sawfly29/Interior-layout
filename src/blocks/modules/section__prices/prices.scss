@@ -1,0 +1,78 @@
+@import "src/blocks/variables";
+@import "src/blocks/mixins";
+.prices {
+    @include commonWindowWidth();
+    @include flexRow();
+    padding: 100px 100px 100px 50px;
+    &__title {
+        @include verticalTitle();
+    }
+    &__offers-container {
+        @include flexRow();
+        margin-left: 50px;
+        justify-content: space-between;
+    }
+    &__offer + .prices__offer {
+        margin-left: 70px;
+    }
+
+    &__offer {
+        .offer {
+            &__title-container {
+                border-top: 1px solid $charcoalBlack;
+                border-bottom: 1px solid $charcoalBlack;
+                padding: 5px 0;
+            }
+            &__title {
+                font-family: "Playfair Display", serif;
+                font-size: 24px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: 32px;
+                letter-spacing: 0;
+                text-align: left;
+            }
+            &__options-list-container {
+                margin-top: 20px;
+            }
+            &__options-list {
+                list-style-position: inside;
+            }
+            &__option {
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: 17px;
+                letter-spacing: 0;
+                text-align: left;
+                margin-top: 20px;
+                &_important {
+                    font-size: 14px;
+                    font-style: normal;
+                    font-weight: 700;
+                    line-height: 17px;
+                    letter-spacing: 0;
+                    text-align: left;
+                }
+            }
+            &__purchase-container {
+                @include flexRow();
+                align-items: center;
+                justify-content: space-between;
+                margin-top: 40px;
+                border-bottom: 1px solid $charcoalBlack;
+                padding-bottom: 40px;
+            }
+            &__purchase-price {
+                font-style: normal;
+                font-weight: 700;
+                font-size: 18px;
+                line-height: 22px;
+            }
+            &__purchase-button {
+                @include buttonStyle(9px, 30px);
+                vertical-align: bottom;
+            }
+        }
+    }
+}

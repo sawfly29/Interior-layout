@@ -1,0 +1,76 @@
+@import "src/blocks/variables";
+@import "src/blocks/mixins";
+.footer {
+    @include commonWindowWidth();
+    @include flexRow();
+    padding: 0 120px 40px 50px;
+    background-color: $charcoalBlack;
+    &__logo-container {
+        @include flexRow();
+    }
+    &__logo-letter {
+        padding: 66px 28px 20px;
+        font-family: "Playfair Display", serif;
+        font-style: normal;
+        font-weight: 900;
+        font-size: 48px;
+        line-height: 64px;
+        background: $silkWhite;
+    }
+    &__logo-sign {
+        font-style: normal;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 20px;
+        color: $silkWhite;
+        width: 77px;
+        margin: 80px 10px 0;
+    }
+    &__content {
+        @include flexRow();
+        justify-content: space-between;
+        width: 100%;
+    }
+    &__middle-container {
+        @include flexColumn();
+        margin: 90px 0 0 80px;
+    }
+    &__links-container {
+        @include flexRow();
+    }
+    &__link-wrapper + .footer__link-wrapper {
+        margin-left: 40px;
+    }
+    &__link {
+        @include linkStyle();
+        font-size: 14px;
+    }
+    &__copyright-container {
+        margin-top: 30px;
+    }
+    &__copyright {
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 20px;
+        letter-spacing: 0;
+        text-align: left;
+        color: $silkWhite;
+    }
+    &__contacts-container {
+        @include flexColumn();
+        margin-top: 50px;
+    }
+    &__contact {
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 20px;
+        letter-spacing: 0;
+        text-align: left;
+        color: $silkWhite;
+    }
+    &__contact + .footer__contact {
+        margin-top: 10px;
+    }
+}

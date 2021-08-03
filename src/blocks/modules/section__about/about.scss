@@ -1,0 +1,59 @@
+@import "src/blocks/variables";
+@import "src/blocks/mixins";
+.about {
+    @include commonWindowWidth();
+    @include flexRow();
+    justify-content: space-between;
+    padding: 100px 160px 100px 50px;
+    &__title-container {
+        padding: 28px 0;
+    }
+    &__title {
+        @include verticalTitle();
+    }
+    &__stats-col {
+        @include flexColumn();
+        margin-left: 100px;
+    }
+    &__stats-row {
+        @include flexRow();
+    }
+    &__stats-fact {
+        @include flexColumn();
+        width: 180px;
+    }
+    &__stats-fact + .about__stats-fact {
+        margin-left: 100px;
+    }
+    &__stats-number {
+        font-family: "Playfair Display", serif;
+        font-size: 80px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 107px;
+        letter-spacing: 0;
+        text-align: left;
+    }
+    &__stats-capture {
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 17px;
+        letter-spacing: 0;
+        text-align: left;
+    }
+    &__capture {
+        margin-left: 100px;
+    }
+    &__capture-text {
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 19px;
+        letter-spacing: 0;
+        text-align: left;
+    }
+    &__capture-text + .about__capture-text {
+        margin-top: 20px;
+    }
+}

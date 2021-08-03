@@ -36,4 +36,24 @@
     font-style: normal;
     font-weight: 500;
     color: $silkWhite;
+    cursor: pointer;
+    outline: none;
+}
+
+@mixin imageCover() {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: right;
+}
+
+@mixin verticalTitle() {
+    font-family: "Playfair Display", serif;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 64px;
+    text-align: left;
+    color: $charcoalBlack;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
 }

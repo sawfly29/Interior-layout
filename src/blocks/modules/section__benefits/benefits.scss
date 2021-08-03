@@ -1,0 +1,41 @@
+@import "src/blocks/variables";
+@import "src/blocks/mixins";
+.benefits {
+    @include commonWindowWidth();
+    @include flexRow();
+    padding: 100px 50px;
+    &__title {
+        @include verticalTitle();
+    }
+    &__columns-container {
+        @include flexRow();
+        margin-left: 200px;
+    }
+    &__column {
+        @include flexColumn();
+        @include specialContainerWidth(200px);
+    }
+    &__column + &__column {
+        margin-left: 80px;
+    }
+    &__column-title {
+        font-family: "Playfair Display", serif;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 32px;
+        letter-spacing: 0;
+        text-align: left;
+    }
+    &__column-text-bounder {
+        margin-top: 20px;
+    }
+    &__column-text {
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 20px;
+        letter-spacing: 0;
+        text-align: left;
+    }
+}

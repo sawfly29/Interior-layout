@@ -1,0 +1,53 @@
+@import "src/blocks/variables";
+@import "src/blocks/mixins";
+.reviews {
+    @include commonWindowWidth();
+    @include flexColumn();
+    padding: 50px 100px 80px;
+    background-color: $charcoalBlack;
+    &__title-container {
+        margin-left: 50px;
+    }
+    &__title {
+        font-family: "Playfair Display", serif;
+        font-size: 48px;
+        font-style: normal;
+        font-weight: 900;
+        line-height: 64px;
+        letter-spacing: 0;
+        text-align: left;
+        color: $silkWhite;
+    }
+    &__reviews-container {
+        @include flexRow();
+        margin-top: 30px;
+        .review {
+            flex: 1;
+            &__text {
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: 20px;
+                letter-spacing: 0;
+                text-align: left;
+                color: $silkWhite;
+            }
+            &__signature-container {
+                margin-top: 30px;
+            }
+            &__signature {
+                font-family: "Playfair Display", serif;
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: 19px;
+                letter-spacing: 0;
+                text-align: left;
+                color: $silkWhite;
+            }
+        }
+        .review + .review {
+            margin-left: 20px;
+        }
+    }
+}

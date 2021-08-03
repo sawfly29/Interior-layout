@@ -1,0 +1,77 @@
+@import "src/blocks/variables";
+@import "src/blocks/mixins";
+.samples {
+    @include commonWindowWidth();
+    @include flexColumn();
+    justify-content: flex-start;
+    &__title-container {
+        margin-left: 250px;
+    }
+    &__title {
+        font-family: "Playfair Display", serif;
+        font-size: 48px;
+        font-style: normal;
+        font-weight: 900;
+        line-height: 64px;
+        letter-spacing: 0;
+        text-align: left;
+    }
+    &__samples-container {
+        @include flexRow();
+        justify-content: center;
+        margin-top: 40px;
+    }
+
+    &__sample + .samples__sample {
+        margin-left: 20px;
+    }
+
+    &__sample {
+        @include flexColumn();
+        flex: 1;
+        justify-content: space-between;
+        width: 100%;
+        max-width: 240px;
+        height: 530px;
+        padding: 30px 20px;
+        &_mod-a {
+            @include imageCover();
+            background-image: url("../../../img/samples/mod_a.png");
+        }
+        &_mod-b {
+            @include imageCover();
+            background-image: url("../../../img/samples/mod_b.png");
+        }
+        &_mod-c {
+            @include imageCover();
+            background-image: url("../../../img/samples/mod_c.png");
+        }
+        &_mod-d {
+            @include imageCover();
+            background-image: url("../../../img/samples/mod_d.png");
+        }
+        .sample {
+            &__title {
+                font-family: "Playfair Display", serif;
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: 19px;
+                letter-spacing: 0;
+                text-align: left;
+                color: $silkWhite;
+            }
+            &__caption {
+                transform: rotate(180deg);
+                writing-mode: vertical-lr;
+                font-size: 10px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: 12px;
+                letter-spacing: 0;
+                text-align: left;
+                color: $silkWhite;
+            }
+        }
+    }
+}

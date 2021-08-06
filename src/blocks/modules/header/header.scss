@@ -1,5 +1,6 @@
 @import "src/blocks/variables";
 @import "src/blocks/mixins";
+
 .header {
     @include commonWindowWidth();
     @include flexColumn();
@@ -15,51 +16,48 @@
         @include flexRow();
         justify-content: space-between;
     }
+
     &__headline-logo {
         @include flexRow();
+        justify-content: flex-start;
         .logo__letter {
-            padding: 66px 28px 20px;
-            font-family: "Playfair Display", serif;
-            font-style: normal;
-            font-weight: 900;
-            font-size: 48px;
-            line-height: 64px;
-            background: $silkWhite;
+            @include logoLetter();
         }
+
         .logo__sign {
-            font-style: normal;
-            font-weight: 700;
-            font-size: 16px;
-            line-height: 20px;
-            color: $silkWhite;
-            width: 77px;
-            margin: 80px 10px 0;
+            @include logoSign();
         }
     }
+
     &__headline-links-container {
         @include flexRow;
-        margin-top: 65px;
+        align-items: center;
+
         .headline-links-container {
             &__link-bounder + .headline-links-container__link-bounder {
                 margin-left: 50px;
             }
+
             &__link {
                 @include linkStyle();
             }
         }
     }
+
     &__midline {
         @include flexRow();
         align-items: flex-end;
-        justify-content: space-between;
         height: 100%;
     }
+
     &__midline-links-container {
-        @include flexColumn;
+        @include flexColumn();
+        justify-content: flex-end;
         .midline-links-container {
             &__link-bounder {
                 margin-top: 50px;
             }
+
             &__link {
                 @include linkStyle();
                 writing-mode: vertical-lr;
@@ -67,45 +65,46 @@
             }
         }
     }
-    &__midline-caption {
+    &__midline-content {
         @include flexColumn();
-        align-self: flex-start;
-        margin-left: 50px;
-        .midline-caption {
-            &__title {
-                @include specialContainerWidth(446px);
-                font-family: "Playfair Display", serif;
-                font-style: normal;
-                font-weight: 700;
-                font-size: 48px;
-                line-height: 64px;
-                color: $silkWhite;
-            }
-            &__text-container {
-                @include specialContainerWidth(344px);
-                margin-top: 50px;
-            }
-            &__text {
-                font-style: normal;
-                font-weight: 500;
-                font-size: 24px;
-                line-height: 29px;
-                color: $silkWhite;
-            }
-            &__button-container {
-                margin-top: 56px;
-            }
-            &__button {
-                @include buttonStyle(15px, 60px);
-                font-size: 14px;
-                line-height: 17px;
-            }
-        }
+        margin-left: 150px;
+        width: 100%;
+        height: 100%;
     }
-    &__midline-example-photos {
+    &__midline-caption-title {
+        font-family: "Playfair Display", serif;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 48px;
+        line-height: 64px;
+        color: $silkWhite;
+    }
+    &__midline-caption-text {
+        margin-top: 50px;
+
+        font-style: normal;
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 29px;
+        color: $silkWhite;
+    }
+    &__midline-elements {
         @include flexRow();
-        .midline-example-photos__photo-container + .midline-example-photos__photo-container {
-            margin-left: 20px;
-        }
+        margin-top: 50px;
+        width: 100%;
+        height: 100%;
+    }
+    &__midline-caption-button {
+        @include buttonStyle(15px, 60px);
+    }
+    &__midline-photo-container {
+        @include flexRow();
+        align-items: flex-end;
+        justify-content: flex-end;
+        width: 100%;
+        height: 100%;
+    }
+    &__midline-photo-wrapper + .header__midline-photo-wrapper {
+        margin-left: 50px;
     }
 }

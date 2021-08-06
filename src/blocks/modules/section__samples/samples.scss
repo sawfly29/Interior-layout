@@ -4,6 +4,7 @@
     @include commonWindowWidth();
     @include flexColumn();
     justify-content: flex-start;
+    background-color: $silkWhite;
     &__title-container {
         margin-left: 250px;
     }

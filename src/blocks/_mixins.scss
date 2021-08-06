@@ -17,6 +17,32 @@
     flex-direction: row;
 }
 
+@mixin logoLetter() {
+    @include flexColumn();
+    justify-content: flex-end;
+    height: 150px;
+    padding: 0 28px 20px;
+    font-family: "Playfair Display", serif;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 48px;
+    line-height: 64px;
+    background: #f7f6f2;
+}
+
+@mixin logoSign() {
+    @include flexColumn();
+    justify-content: flex-end;
+    margin-left: 10px;
+    padding-bottom: 30px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    color: $silkWhite;
+}
+
+
 @mixin linkStyle() {
     text-decoration: none;
     font-style: normal;

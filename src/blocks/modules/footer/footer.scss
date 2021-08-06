@@ -3,52 +3,46 @@
 .footer {
     @include commonWindowWidth();
     @include flexRow();
+    justify-content: space-between;
+    height: 200px;
     padding: 0 120px 40px 50px;
     background-color: $charcoalBlack;
     &__logo-container {
         @include flexRow();
+        height: 150px;
     }
     &__logo-letter {
-        padding: 66px 28px 20px;
-        font-family: "Playfair Display", serif;
-        font-style: normal;
-        font-weight: 900;
-        font-size: 48px;
-        line-height: 64px;
-        background: $silkWhite;
+        @include logoLetter();
     }
     &__logo-sign {
-        font-style: normal;
-        font-weight: 700;
-        font-size: 16px;
-        line-height: 20px;
-        color: $silkWhite;
-        width: 77px;
-        margin: 80px 10px 0;
+        @include logoSign();
     }
+
     &__content {
         @include flexRow();
+        align-items: flex-end;
         justify-content: space-between;
         width: 100%;
+        margin-left: 80px;
     }
     &__middle-container {
         @include flexColumn();
-        margin: 90px 0 0 80px;
     }
     &__links-container {
         @include flexRow();
     }
-    &__link-wrapper + .footer__link-wrapper {
-        margin-left: 40px;
-    }
     &__link {
         @include linkStyle();
+        display: flex;
         font-size: 14px;
     }
-    &__copyright-container {
-        margin-top: 30px;
+    &__link + .footer__link {
+        margin-left: 40px;
     }
+
     &__copyright {
+        display: flex;
+        margin-top: 30px;
         font-size: 14px;
         font-style: normal;
         font-weight: 500;
@@ -59,9 +53,10 @@
     }
     &__contacts-container {
         @include flexColumn();
-        margin-top: 50px;
+        margin-bottom: 30px;
     }
     &__contact {
+        display: flex;
         font-size: 14px;
         font-style: normal;
         font-weight: 500;
@@ -69,6 +64,7 @@
         letter-spacing: 0;
         text-align: left;
         color: $silkWhite;
+        text-decoration: none;
     }
     &__contact + .footer__contact {
         margin-top: 10px;

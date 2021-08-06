@@ -4,6 +4,7 @@
     @include commonWindowWidth();
     @include flexRow();
     padding: 100px 100px 100px 50px;
+    background-color: $silkWhite;
     &__title {
         @include verticalTitle();
     }
@@ -18,12 +19,10 @@
 
     &__offer {
         .offer {
-            &__title-container {
+            &__title {
                 border-top: 1px solid $charcoalBlack;
                 border-bottom: 1px solid $charcoalBlack;
                 padding: 5px 0;
-            }
-            &__title {
                 font-family: "Playfair Display", serif;
                 font-size: 24px;
                 font-style: normal;
@@ -32,11 +31,9 @@
                 letter-spacing: 0;
                 text-align: left;
             }
-            &__options-list-container {
-                margin-top: 20px;
-            }
             &__options-list {
-                list-style-position: inside;
+                margin-top: 20px;
+                list-style-position: outside;
             }
             &__option {
                 font-size: 14px;
@@ -46,14 +43,6 @@
                 letter-spacing: 0;
                 text-align: left;
                 margin-top: 20px;
-                &_important {
-                    font-size: 14px;
-                    font-style: normal;
-                    font-weight: 700;
-                    line-height: 17px;
-                    letter-spacing: 0;
-                    text-align: left;
-                }
             }
             &__purchase-container {
                 @include flexRow();
